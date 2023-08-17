@@ -18,5 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registration', [UserController::class, 'UserRegistration'])->name('userRegistration');
-Route::post('/registration', [UserController::class, 'UserStore'])->name('userStore');
+Route::get('/registration', [UserController::class, 'userRegistration'])->name('userRegistration');
+Route::post('/registration', [UserController::class, 'userStore'])->name('userStore');
+
+Route::get('/login', [UserController::class, 'userLogin'])->name('userLogin');
+Route::post('/login', [UserController::class, 'userAuthenticate'])->name('userAuthenticate');
